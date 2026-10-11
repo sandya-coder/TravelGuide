@@ -125,8 +125,9 @@ voice_id = st.text_input(
 
 st.caption(
     "Use a voice ID supported by your Murf API account "
-    and compatible with your selected language."
+    "and compatible with your selected language."
 )
+
 
 # --------------------------------------------------
 # LANGUAGE SETTINGS
