@@ -23,12 +23,31 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap');
 
+/* GLOBAL COLORS */
 .stApp {
-    background: #f7f9fc;
+    background: #f5f7fb !important;
+    color: #172033 !important;
     font-family: 'DM Sans', sans-serif;
+}
+
+.stApp p,
+.stApp li,
+.stApp label,
+.stApp h1,
+.stApp h2,
+.stApp h3,
+.stApp h4,
+.stApp span,
+.stApp div[data-testid="stMarkdownContainer"] {
     color: #172033;
 }
 
+/* Keep icons and emoji visible */
+.stApp [data-testid="stMarkdownContainer"] {
+    color: #172033 !important;
+}
+
+/* PAGE LAYOUT */
 header[data-testid="stHeader"] {
     background: transparent;
 }
@@ -38,8 +57,7 @@ header[data-testid="stHeader"] {
     padding: 1.5rem 2rem 3rem 2rem;
 }
 
-/* TOP BRAND */
-
+/* BRAND HEADER */
 .brand {
     display: flex;
     align-items: center;
@@ -55,26 +73,24 @@ header[data-testid="stHeader"] {
     justify-content: center;
     border-radius: 15px;
     background: linear-gradient(135deg, #2563eb, #06b6d4);
-    color: white;
+    color: #ffffff !important;
     font-size: 25px;
 }
 
 .brand-name {
     font-size: 23px;
     font-weight: 800;
-    color: #14213d;
+    color: #14213d !important;
     letter-spacing: -0.8px;
 }
 
 .brand-subtitle {
     font-size: 12px;
-    color: #718096;
+    color: #64748b !important;
 }
 
-/* HERO */
-
+/* HERO BANNER */
 .hero {
-    position: relative;
     overflow: hidden;
     border-radius: 28px;
     padding: 60px 45px;
@@ -82,9 +98,9 @@ header[data-testid="stHeader"] {
     background:
         linear-gradient(
             90deg,
-            rgba(8, 22, 46, 0.92) 0%,
-            rgba(8, 22, 46, 0.70) 48%,
-            rgba(8, 22, 46, 0.10) 100%
+            rgba(8, 22, 46, 0.94) 0%,
+            rgba(8, 22, 46, 0.75) 55%,
+            rgba(8, 22, 46, 0.18) 100%
         ),
         url("https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1800&q=85");
     background-size: cover;
@@ -92,13 +108,13 @@ header[data-testid="stHeader"] {
     box-shadow: 0 18px 45px rgba(22, 43, 75, 0.13);
 }
 
-.hero-tag {
+.hero .hero-tag {
     display: inline-block;
     padding: 8px 13px;
-    border: 1px solid rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.4);
     border-radius: 30px;
     background: rgba(255,255,255,0.12);
-    color: #ffffff;
+    color: #ffffff !important;
     font-size: 12px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -116,56 +132,19 @@ header[data-testid="stHeader"] {
 }
 
 .hero p {
-    color: #e6edf8 !important;
+    color: #f1f5f9 !important;
     max-width: 570px;
     font-size: 16px;
     line-height: 1.8;
 }
 
-.hero-highlight {
-    color: #67e8f9;
+.hero .hero-highlight {
+    color: #67e8f9 !important;
 }
 
-/* FEATURE CARDS */
-
-.feature-card {
-    height: 100%;
-    padding: 21px;
-    background: white;
-    border: 1px solid #e8edf5;
-    border-radius: 19px;
-    box-shadow: 0 5px 18px rgba(22, 43, 75, 0.035);
-}
-
-.feature-icon {
-    width: 43px;
-    height: 43px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #eff6ff;
-    border-radius: 13px;
-    font-size: 22px;
-    margin-bottom: 13px;
-}
-
-.feature-card h4 {
-    font-size: 16px;
-    color: #172033;
-    margin: 0 0 8px 0;
-}
-
-.feature-card p {
-    color: #718096;
-    font-size: 13px;
-    line-height: 1.7;
-    margin: 0;
-}
-
-/* SECTION TITLES */
-
+/* SECTION HEADINGS */
 .section-kicker {
-    color: #2563eb;
+    color: #2563eb !important;
     text-transform: uppercase;
     letter-spacing: 1.6px;
     font-weight: 800;
@@ -176,7 +155,7 @@ header[data-testid="stHeader"] {
 .section-heading {
     font-family: 'Manrope', sans-serif;
     font-size: 28px;
-    color: #172033;
+    color: #172033 !important;
     font-weight: 800;
     letter-spacing: -0.7px;
     margin-bottom: 7px;
@@ -184,72 +163,164 @@ header[data-testid="stHeader"] {
 
 .section-description {
     font-size: 14px;
-    color: #718096;
+    color: #526176 !important;
     line-height: 1.7;
     margin-bottom: 23px;
 }
 
-/* FORM CONTAINER */
+/* FEATURE CARDS */
+.feature-card {
+    height: 100%;
+    padding: 21px;
+    background: #ffffff;
+    border: 1px solid #e3e9f2;
+    border-radius: 19px;
+    box-shadow: 0 5px 18px rgba(22, 43, 75, 0.04);
+}
 
+.feature-card .feature-icon {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eaf2ff;
+    border-radius: 13px;
+    font-size: 22px;
+    margin-bottom: 13px;
+}
+
+.feature-card h4 {
+    font-size: 16px;
+    color: #172033 !important;
+    margin: 0 0 8px 0;
+}
+
+.feature-card p {
+    color: #526176 !important;
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* DESTINATION CARDS */
+.destination-card {
+    background: #ffffff;
+    border: 1px solid #e3e9f2;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+    display: block;
+}
+
+.destination-card .destination-info {
+    padding: 12px 13px 14px;
+}
+
+.destination-card .destination-name {
+    font-weight: 800;
+    color: #172033 !important;
+    font-size: 15px;
+}
+
+.destination-card .destination-location {
+    color: #526176 !important;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* FORM CONTAINER */
 .form-card {
     background: #ffffff;
-    border: 1px solid #e7edf5;
+    border: 1px solid #e3e9f2;
     border-radius: 22px;
     padding: 25px;
     box-shadow: 0 8px 30px rgba(22, 43, 75, 0.045);
 }
 
-div[data-testid="stTextInput"] input {
-    min-height: 47px;
-    border: 1px solid #dce5f0;
-    border-radius: 12px;
-    background: #ffffff;
-    color: #172033;
+/* FORM LABELS */
+.stApp [data-testid="stWidgetLabel"] p,
+.stApp [data-testid="stWidgetLabel"] label,
+.stApp .stTextInput label,
+.stApp .stSelectbox label,
+.stApp .stRadio label {
+    color: #243247 !important;
+    font-weight: 600;
 }
 
-div[data-testid="stTextInput"] input:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.12);
+/* TEXT INPUTS */
+.stApp input,
+.stApp textarea {
+    color: #172033 !important;
+    background-color: #ffffff !important;
+    -webkit-text-fill-color: #172033 !important;
+    border-color: #d6e0ed !important;
+    border-radius: 12px !important;
 }
 
-div[data-testid="stSelectbox"] > div > div {
-    min-height: 45px;
-    border-radius: 12px;
-    border-color: #dce5f0;
-    background: #ffffff;
+.stApp input::placeholder,
+.stApp textarea::placeholder {
+    color: #7b8798 !important;
+    -webkit-text-fill-color: #7b8798 !important;
+    opacity: 1 !important;
 }
 
-div[role="radiogroup"] {
-    gap: 12px;
+/* DROPDOWNS */
+.stApp [data-testid="stSelectbox"] div[data-baseweb="select"] {
+    background: #ffffff !important;
+}
+
+.stApp [data-testid="stSelectbox"] div[data-baseweb="select"] * {
+    color: #172033 !important;
+}
+
+/* RADIO BUTTON LABELS */
+.stApp [data-testid="stRadio"] label,
+.stApp [data-testid="stRadio"] p {
+    color: #243247 !important;
+}
+
+/* CAPTIONS */
+.stApp [data-testid="stCaptionContainer"] p {
+    color: #526176 !important;
+    font-size: 13px;
 }
 
 /* BUTTONS */
-
-.stButton button,
-.stDownloadButton button {
+.stApp .stButton button,
+.stApp .stDownloadButton button {
     min-height: 49px;
     width: 100%;
-    border: none;
+    border: none !important;
     border-radius: 13px;
-    background: linear-gradient(105deg, #2563eb, #0891b2);
-    color: white;
+    background: linear-gradient(105deg, #2563eb, #0891b2) !important;
+    color: #ffffff !important;
     font-weight: 800;
     transition: all 0.2s ease;
 }
 
-.stButton button:hover,
-.stDownloadButton button:hover {
-    border: none;
-    color: white;
+.stApp .stButton button *,
+.stApp .stDownloadButton button * {
+    color: #ffffff !important;
+}
+
+.stApp .stButton button:hover,
+.stApp .stDownloadButton button:hover {
+    background: linear-gradient(105deg, #1d4ed8, #0e7490) !important;
     box-shadow: 0 7px 20px rgba(37, 99, 235, 0.22);
     transform: translateY(-1px);
 }
 
 /* GENERATED STORY */
-
 .story-card {
     padding: 27px;
-    border: 1px solid #e5eaf2;
+    border: 1px solid #e3e9f2;
     border-radius: 20px;
     background: #ffffff;
     margin-top: 12px;
@@ -259,7 +330,7 @@ div[role="radiogroup"] {
 .story-label {
     font-size: 11px;
     font-weight: 800;
-    color: #2563eb;
+    color: #2563eb !important;
     letter-spacing: 1.4px;
     text-transform: uppercase;
     margin-bottom: 10px;
@@ -267,34 +338,63 @@ div[role="radiogroup"] {
 
 .story-title {
     font-family: 'Manrope', sans-serif;
-    color: #172033;
+    color: #172033 !important;
     font-size: 25px;
     font-weight: 800;
     margin-bottom: 12px;
 }
 
-/* FOOTER */
+/* GENERATED STORY TEXT */
+.stApp [data-testid="stMarkdownContainer"] p,
+.stApp [data-testid="stMarkdownContainer"] li {
+    color: #263449;
+    line-height: 1.8;
+}
 
+.stApp h2,
+.stApp h3,
+.stApp h4 {
+    color: #172033 !important;
+}
+
+/* ALERTS */
+.stApp [data-testid="stAlert"] p {
+    color: inherit !important;
+}
+
+/* AUDIO PLAYER */
+.stApp audio {
+    width: 100%;
+    border-radius: 12px;
+}
+
+/* SIDEBAR */
+section[data-testid="stSidebar"] {
+    background: #edf3ff;
+}
+
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] label {
+    color: #172033 !important;
+}
+
+/* FOOTER */
 .footer {
     text-align: center;
     padding: 24px 10px;
-    color: #7b8798;
+    color: #526176 !important;
     font-size: 13px;
     line-height: 1.8;
 }
 
 .footer strong {
-    color: #2563eb;
-}
-
-/* SIDEBAR */
-
-section[data-testid="stSidebar"] {
-    background: #eff5ff;
+    color: #2563eb !important;
 }
 
 /* MOBILE */
-
 @media (max-width: 700px) {
     .main .block-container {
         padding: 1rem 1rem 2rem 1rem;
@@ -348,7 +448,9 @@ with st.sidebar:
     st.divider()
 
     st.markdown("### 🌍 Explore with AI")
-    st.write("Generate narrated travel stories for destinations around the world.")
+    st.write(
+        "Generate narrated travel stories for destinations around the world."
+    )
 
     st.markdown("### ✨ What you can do")
     st.write("📍 Discover destinations")
@@ -490,22 +592,16 @@ for index, item in enumerate(destinations):
     with destination_columns[index]:
         st.markdown(
             f"""
-            <div style="
-                background:#ffffff;
-                border:1px solid #e7edf5;
-                border-radius:16px;
-                overflow:hidden;
-                margin-bottom:10px;
-            ">
+            <div class="destination-card">
                 <img
                     src="https://images.unsplash.com/{item['image']}?auto=format&fit=crop&w=500&q=80"
-                    style="width:100%;height:125px;object-fit:cover;"
+                    alt="{html.escape(item['name'])}"
                 >
-                <div style="padding:12px 13px 14px 13px;">
-                    <div style="font-weight:800;color:#172033;font-size:15px;">
+                <div class="destination-info">
+                    <div class="destination-name">
                         {html.escape(item['name'])}
                     </div>
-                    <div style="color:#718096;font-size:12px;margin-top:4px;">
+                    <div class="destination-location">
                         {html.escape(item['location'])}
                     </div>
                 </div>
@@ -777,7 +873,6 @@ Do not invent facts when information is uncertain.
             st.error(
                 "Something went wrong while generating your guide."
             )
-            st.write("Error details:")
             st.code(str(e))
 
 
