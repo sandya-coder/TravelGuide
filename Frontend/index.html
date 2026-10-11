@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelMate AI - Audio Travel Guide</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="brand">✈️ TravelMate AI</div>
+    <span class="tag">YOUR PERSONAL AUDIO TOUR GUIDE</span>
+    <h1>Discover the world,<br><span>one story at a time.</span></h1>
+    <p>Explore famous destinations with AI-powered travel stories
+       and natural-sounding audio narration.</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>🌍 Create your travel guide</h2>
+
+      <form id="guide-form">
+        <label for="place">Destination</label>
+        <input id="place" name="place" required maxlength="200"
+          placeholder="e.g. Taj Mahal, Agra">
+
+        <div class="two-columns">
+          <div>
+            <label for="language">Narration language</label>
+            <select id="language">
+              <option value="English">English</option>
+              <option value="Hindi">Hindi</option>
+              <option value="Tamil">Tamil</option>
+              <option value="Telugu">Telugu</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="answerType">Guide length</label>
+            <select id="answerType">
+              <option value="Summary">Quick summary</option>
+              <option value="Detailed">Detailed story</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="voiceId">Murf voice ID</label>
+        <input id="voiceId" required
+          placeholder="Enter a voice ID supported by Falcon">
+
+        <label for="locale">Voice locale</label>
+        <select id="locale">
+          <option value="en-US">English (US) — en-US</option>
+          <option value="en-IN">English (India) — en-IN</option>
+          <option value="hi-IN">Hindi — hi-IN</option>
+          <option value="ta-IN">Tamil — ta-IN</option>
+          <option value="te-IN">Telugu — te-IN</option>
+        </select>
+
+        <p class="hint">
+          Choose a voice ID supported by your Murf Falcon API account.
+          Not every voice supports every locale.
+        </p>
+
+        <button id="generate-btn" type="submit">
+          ✨ Generate my audio guide
+        </button>
+      </form>
+
+      <p id="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="panel result">
+      <h2>🎧 Your travel story</h2>
+      <p class="muted">Your AI-generated description will appear here.</p>
+
+      <div id="description" class="description">
+        Choose a destination and generate your guide to begin.
+      </div>
+
+      <div id="audio-controls" class="audio-controls" hidden>
+        <h3>🔊 Your Audio Guide</h3>
+
+        <audio id="audio-player" controls preload="metadata">
+          Your browser does not support audio playback.
+        </audio>
+
+        <div class="audio-buttons">
+          <button id="play-audio" type="button">▶ Play</button>
+          <button id="pause-audio" type="button">⏸ Pause</button>
+          <button id="download-audio" type="button">
+            ⬇ Download MP3
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Made with Gemini AI + Murf AI · Travel smarter, explore more ✨
+  </footer>
+</body>
+</html>

@@ -1,0 +1,453 @@
+/* ============================
+   TravelMate AI - Main Styling
+   ============================ */
+
+:root {
+  --primary: #5b5cf0;
+  --primary-dark: #4243d4;
+  --secondary: #13b8a6;
+  --background: #f3f5ff;
+  --surface: #ffffff;
+  --text: #202344;
+  --muted: #737995;
+  --border: #e3e6f3;
+  --shadow: 0 15px 45px rgba(48, 54, 120, 0.10);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%, #e4e8ff 0, transparent 28%),
+    radial-gradient(circle at 90% 25%, #d8fbf3 0, transparent 25%),
+    var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ============================
+   Hero section
+   ============================ */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 65px 20px 85px;
+  text-align: center;
+  color: white;
+  background: linear-gradient(135deg, #4546d9, #7556e9 55%, #19b9ad);
+  border-radius: 0 0 45px 45px;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 280px;
+  height: 280px;
+  top: -150px;
+  left: -65px;
+}
+
+.hero::after {
+  width: 360px;
+  height: 360px;
+  right: -120px;
+  bottom: -230px;
+}
+
+.brand {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 25px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.tag {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 7px 16px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.13);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 18px;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.hero h1 span {
+  color: #bffcf0;
+}
+
+.hero p {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.05rem;
+}
+
+/* ============================
+   Main layout
+   ============================ */
+
+.container {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 28px;
+  width: min(1150px, calc(100% - 36px));
+  margin: -35px auto 55px;
+  position: relative;
+  z-index: 2;
+  align-items: start;
+}
+
+.panel {
+  min-width: 0;
+  padding: 30px;
+  background: var(--surface);
+  border: 1px solid rgba(227, 230, 243, 0.9);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  margin-bottom: 25px;
+  font-size: 1.35rem;
+  line-height: 1.4;
+}
+
+.result h2 {
+  margin-bottom: 8px;
+}
+
+.muted {
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+/* ============================
+   Form controls
+   ============================ */
+
+#guide-form label {
+  display: block;
+  margin: 18px 0 8px;
+  color: #373b60;
+  font-size: 0.91rem;
+  font-weight: 700;
+}
+
+#guide-form label:first-child {
+  margin-top: 0;
+}
+
+input,
+select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  outline: none;
+  background: #fafbff;
+  color: var(--text);
+  font: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+input::placeholder {
+  color: #a1a5ba;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(91, 92, 240, 0.12);
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.hint {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+/* ============================
+   Buttons
+   ============================ */
+
+button {
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+#generate-btn {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 23px;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 13px;
+  color: white;
+  background: linear-gradient(110deg, var(--primary), #8058e9);
+  box-shadow: 0 8px 20px rgba(91, 92, 240, 0.23);
+}
+
+#generate-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(91, 92, 240, 0.3);
+}
+
+button:focus-visible {
+  outline: 3px solid #a8a9ff;
+  outline-offset: 3px;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+/* ============================
+   Status messages
+   ============================ */
+
+#status {
+  min-height: 24px;
+  margin-top: 16px;
+  color: var(--primary-dark);
+  font-size: 0.9rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* ============================
+   Travel description
+   ============================ */
+
+.description {
+  min-height: 180px;
+  padding: 22px;
+  border: 1px solid #e3e4ff;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #f7f7ff, #f0fffb);
+  color: #444866;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  line-height: 1.85;
+  font-size: 0.96rem;
+}
+
+/* ============================
+   Audio player and controls
+   ============================ */
+
+.audio-controls {
+  margin-top: 24px;
+  padding: 20px;
+  border: 1px solid #dce4ff;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #f4f5ff, #edfffb);
+}
+
+.audio-controls[hidden] {
+  display: none !important;
+}
+
+.audio-controls h3 {
+  margin-bottom: 14px;
+  color: #35378f;
+  font-size: 1.08rem;
+}
+
+#audio-player {
+  display: block;
+  width: 100%;
+  height: 48px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+}
+
+.audio-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.audio-buttons button {
+  min-height: 45px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 11px;
+  font-size: 0.9rem;
+}
+
+#play-audio {
+  color: white;
+  background: var(--primary);
+}
+
+#play-audio:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+#pause-audio {
+  color: #4546a8;
+  background: #e5e7ff;
+  border-color: #d3d5ff;
+}
+
+#pause-audio:hover {
+  background: #d8daff;
+  transform: translateY(-2px);
+}
+
+#download-audio {
+  grid-column: 1 / -1;
+  color: #075e50;
+  background: #d8faf1;
+  border-color: #b8f0e2;
+}
+
+#download-audio:hover {
+  background: #c4f5e8;
+  transform: translateY(-2px);
+}
+
+/* ============================
+   Footer
+   ============================ */
+
+footer {
+  padding: 25px 18px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 0.88rem;
+}
+
+/* ============================
+   Responsive design
+   ============================ */
+
+@media (max-width: 850px) {
+  .container {
+    grid-template-columns: 1fr;
+    max-width: 650px;
+    gap: 22px;
+  }
+
+  .hero {
+    padding: 55px 20px 75px;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero {
+    padding: 42px 18px 65px;
+    border-radius: 0 0 28px 28px;
+  }
+
+  .hero h1 {
+    font-size: 2.25rem;
+    letter-spacing: -0.8px;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .tag {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+  }
+
+  .container {
+    width: calc(100% - 24px);
+    margin-top: -25px;
+  }
+
+  .panel {
+    padding: 21px;
+    border-radius: 19px;
+  }
+
+  .panel h2 {
+    font-size: 1.2rem;
+  }
+
+  .two-columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .description {
+    min-height: 140px;
+    padding: 16px;
+    font-size: 0.92rem;
+  }
+
+  .audio-controls {
+    padding: 15px;
+  }
+
+  .audio-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  #download-audio {
+    grid-column: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
